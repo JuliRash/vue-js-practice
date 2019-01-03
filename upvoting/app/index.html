@@ -17,7 +17,7 @@
 <!-- loop using v-for directive -->
     
 <div class="section">
-    <article class="media" v-for="submission in submission" v-bind:key="submission.id">
+    <article class="media" v-for="submission in sortedSubmissions" v-bind:key="submission.id">
         <figure class="media-left">
             <img class="image is-64x64" v-bind:src="submission.submissionImage" alt="">
         </figure>
