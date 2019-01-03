@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../public/styles.css" />
+    <!-- /css -->
+</head>
+<body>
+<div id="app">
+    <h2 class="title has-text-centered dividing-header">UpVote!!</h2>
+<!-- loop using v-for directive -->
+    
+<div class="section">
+    <article class="media">
+        <figure class="media-left">
+            <img class="image is-64x64" v-bind:src="submission[0].submissionImage" alt="">
+        </figure>
+        <div class="media-content">
+            <div class="content">
+                <p>
+                        <a v-bind:href="submission.url" class="has-text-info">{{ submission[0].title }}</a>
+                        <span class="tag is-small">{{ submission[0].id }}</span>
+                    </strong>
+                    <br>
+                    {{ submission[0].description }}
+                    <br>
+                    <small class="is-size-7">
+                        Submitted by:
+                        <img class="image is-24x24" v-bind:src="submission[0].avatar" alt="">
+                    </small>
+                </p>
+            </div>
+        </div>
+        <div class="media-right">
+            <span class="icon is-small">
+                <i class="fa fa-chevron-up"></i>
+                <strong class="has-text-info">{{ submission[0].votes }}</strong>
+            </span>
+        </div>
+    </article>
+</div>
+</div>
+
+    <!-- script  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="seed.js"></script>
+    <script src="main.js"></script>
+    <!-- /script -->
+</body>
+</html>
