@@ -17,22 +17,22 @@
 <!-- loop using v-for directive -->
     
 <div class="section">
-    <article class="media">
+    <article class="media" v-for="submission in submission" v-bind:key="submission.id">
         <figure class="media-left">
-            <img class="image is-64x64" v-bind:src="submission[0].submissionImage" alt="">
+            <img class="image is-64x64" v-bind:src="submission.submissionImage" alt="">
         </figure>
         <div class="media-content">
             <div class="content">
                 <p>
-                        <a v-bind:href="submission.url" class="has-text-info">{{ submission[0].title }}</a>
-                        <span class="tag is-small">{{ submission[0].id }}</span>
+                        <a v-bind:href="submission.url" class="has-text-info">{{ submission.title }}</a>
+                        <span class="tag is-small">{{ submission.id }}</span>
                     </strong>
                     <br>
-                    {{ submission[0].description }}
+                    {{ submission.description }}
                     <br>
                     <small class="is-size-7">
                         Submitted by:
-                        <img class="image is-24x24" v-bind:src="submission[0].avatar" alt="">
+                        <img class="image is-24x24" v-bind:src="submission.avatar" alt="">
                     </small>
                 </p>
             </div>
@@ -40,7 +40,7 @@
         <div class="media-right">
             <span class="icon is-small">
                 <i class="fa fa-chevron-up"></i>
-                <strong class="has-text-info">{{ submission[0].votes }}</strong>
+                <strong class="has-text-info">{{ submission.votes }}</strong>
             </span>
         </div>
     </article>
